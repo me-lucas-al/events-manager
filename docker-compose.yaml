@@ -1,0 +1,22 @@
+services:
+  events_manager:
+    image: bitnami/postgresql:latest
+    container_name: events_manager
+    ports:
+      - "5436:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=events_manager
+    volumes:
+      - db_volume:/bitnami/postgresql
+    networks:
+      - local-network
+
+volumes:
+  db_volume:
+
+networks:
+  local-network:
+    driver: bridge
