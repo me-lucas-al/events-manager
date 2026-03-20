@@ -6,9 +6,9 @@ services:
       - "5436:5432"
     restart: always
     environment:
-      - POSTGRES_USER=postgres
+      - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=events_manager
+      - POSTGRES_DATABASE=events_manager
     volumes:
       - db_volume:/bitnami/postgresql
     networks:
